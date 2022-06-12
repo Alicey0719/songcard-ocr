@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  songcard-ocr:
+    build: .
+    container_name: songcard-ocr
+    volumes:
+      - "./app:/opt/app/"
+    working_dir: /opt/app/
+    entrypoint: >
+      bash -c "
+        python3 app.py
+      "
